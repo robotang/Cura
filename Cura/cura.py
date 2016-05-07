@@ -1,4 +1,6 @@
 #!/usr/bin/python
+# -*- coding: utf-8 -*- 
+
 """
 This page is in the table of contents.
 ==Overview==
@@ -40,7 +42,7 @@ def main():
 
 	print "load preferences from " + profile.getPreferencePath()
 	profile.loadPreferences(profile.getPreferencePath())
-
+	
 	if options.profile is not None:
 		profile.setProfileFromString(options.profile)
 	elif options.profileini is not None:
@@ -51,6 +53,7 @@ def main():
 	if options.printfile is not None:
 		from Cura.gui import printWindow
 		printWindow.startPrintInterface(options.printfile)
+		
 	elif options.slice is not None:
 		from Cura.util import sliceEngine
 		from Cura.util import objectScene
